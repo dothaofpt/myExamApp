@@ -1,0 +1,19 @@
+<h2>Thêm Sách Truyện Tranh Mới</h2>
+<form (ngSubmit)="saveComicBook()">
+  <label>Tiêu Đề</label>
+  <input [(ngModel)]="comicBook.title" name="title" required>
+
+  <label>Tác Giả</label>
+  <input [(ngModel)]="comicBook.author" name="author" required>
+
+  <label>Thể Loại</label>
+  <input [(ngModel)]="comicBook.genre" name="genre" required>
+
+  <label>Ngày Xuất Bản</label>
+  <input [(ngModel)]="comicBook.publicationDate" name="publicationDate" type="date" required>
+
+  <label>Giá</label>
+  <input [(ngModel)]="comicBook.price" name="price" type="number" required>
+
+  <button type="submit">Lưu</button>
+</form>

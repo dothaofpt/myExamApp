@@ -1,0 +1,28 @@
+<h2>Danh Sách Sách Truyện Tranh</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tiêu Đề</th>
+      <th>Tác Giả</th>
+      <th>Thể Loại</th>
+      <th>Ngày Xuất Bản</th>
+      <th>Giá</th>
+      <th>Hành Động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comic of comicBooks">
+      <td>{{ comic.id }}</td>
+      <td>{{ comic.title }}</td>
+      <td>{{ comic.author }}</td>
+      <td>{{ comic.genre }}</td>
+      <td>{{ comic.publicationDate | date }}</td>
+      <td>{{ comic.price | currency }}</td>
+      <td>
+        <button (click)="deleteComicBook(comic.id)">Xóa</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a routerLink="/comic-books/create">Thêm Sách Truyện Tranh Mới</a>

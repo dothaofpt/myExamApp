@@ -1,0 +1,31 @@
+<h2>Báo Cáo Thuê Sách</h2>
+<form (ngSubmit)="generateReport()">
+  <label>Ngày Bắt Đầu</label>
+  <input [(ngModel)]="startDate" name="startDate" type="date" required>
+
+  <label>Ngày Kết Thúc</label>
+  <input [(ngModel)]="endDate" name="endDate" type="date" required>
+
+  <button type="submit">Tạo Báo Cáo</button>
+</form>
+
+<table *ngIf="reportData.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Khách Hàng</th>
+      <th>Ngày Thuê</th>
+      <th>Ngày Trả</th>
+      <th>Tổng Số Tiền</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rental of reportData">
+      <td>{{ rental.id }}</td>
+      <td>{{ rental.customerId }}</td>
+      <td>{{ rental.rentalDate | date }}</td>
+      <td>{{ rental.returnDate | date }}</td>
+      <td>{{ rental.totalAmount | currency }}</td>
+    </tr>
+  </tbody>
+</table>
