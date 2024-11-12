@@ -18,12 +18,36 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\PC\Downloads\myExamApp\MyExamApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/PC/Downloads/myExamApp/MyExamApp/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/PC/Downloads/myExamApp/MyExamApp/Views/BookComics/create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0NvbWljc1xjcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/PC/Downloads/myExamApp/MyExamApp/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/PC/Downloads/myExamApp/MyExamApp/Views/BookComics/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0NvbWljc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Downloads/myExamApp/MyExamApp/Views/BookComics/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0NvbWljc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Downloads/myExamApp/MyExamApp/Views/BookComics/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0NvbWljc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Downloads/myExamApp/MyExamApp/Views/BookComics/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0NvbWljc1xQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Downloads/myExamApp/MyExamApp/Views/BookComics/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0NvbWljc1xSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Downloads/myExamApp/MyExamApp/Views/BookComics/RentalReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0NvbWljc1xSZW50YWxSZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Downloads/myExamApp/MyExamApp/Views/BookComics/RentBook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0NvbWljc1xSZW50Qm9vay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/PC/Downloads/myExamApp/MyExamApp/Views/Shared/Error.cshtml]
