@@ -1,0 +1,6 @@
+@ComicBookRentalApp_HostAddress = http://localhost:5199
+
+GET {{ComicBookRentalApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
