@@ -1,0 +1,30 @@
+@model IEnumerable<Rental>
+
+<h2>Rental Report</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>Rental Date</th>
+            <th>Return Date</th>
+            <th>Customer Name</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var rental in Model)
+    {
+        foreach (var detail in rental.RentalDetails)
+        {
+            <tr>
+                <td>@detail.ComicBook.BookName</td>
+                <td>@rental.RentalDate.ToShortDateString()</td>
+                <td>@rental.ReturnDate.ToShortDateString()</td>
+                <td>@rental.Customer.Fullname</td>
+                <td>@detail.Quantity</td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>
