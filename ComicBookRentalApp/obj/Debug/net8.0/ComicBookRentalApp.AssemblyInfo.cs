@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ComicBookRentalApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d6da927292b6c134634bb89ae6d626e00362692")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3ddfc82a4f151cbc9d67dd6c663fe52f91a969e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ComicBookRentalApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ComicBookRentalApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
