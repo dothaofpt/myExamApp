@@ -27,4 +27,5 @@ namespace ComicBookRentalApp.Data
                 .HasForeignKey(rd => rd.RentalID);
         }
     }
+    
 }
