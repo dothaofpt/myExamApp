@@ -8,3 +8,4 @@ public class Rental
     
     public Customer Customer { get; set; }
 }
+ 

@@ -9,3 +9,4 @@ public class RentalDetail
     public Rental Rental { get; set; }
     public ComicBook ComicBook { get; set; }
 }
+ 
