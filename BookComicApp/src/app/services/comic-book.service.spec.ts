@@ -7,7 +7,7 @@ import { ComicBook } from '../models/ComicBook';
   providedIn: 'root'
 })
 export class ComicBookService {
-  private apiUrl = 'http://localhost:5000/api/comicbooks';
+  private apiUrl = 'http://localhost:5199/api/comicbooks';
 
   constructor(private http: HttpClient) {}
 
