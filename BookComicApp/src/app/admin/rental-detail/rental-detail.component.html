@@ -1,1 +1,58 @@
-<p>rental-detail works!</p>
+<nz-table #basicTable [nzData]="rentalDetails" [nzBordered]="true" [nzSize]="'middle'" [nzShowPagination]="true">
+  <thead>
+    <tr>
+      <th nzWidth="20%">Tên đơn thuê</th>
+      <th nzWidth="20%">Tên sách truyện</th>
+      <th nzWidth="20%">Số lượng</th>
+      <th nzWidth="20%">Giá thuê mỗi ngày</th>
+      <th nzWidth="20%">Thao tác</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rentalDetail of rentalDetails">
+      <td>{{ rentalDetail.Rental?.Customer?.FullName }}</td>
+      <td>{{ rentalDetail.ComicBook?.Title }}</td>
+      <td>{{ rentalDetail.Quantity }}</td>
+      <td>{{ rentalDetail.PricePerDay | currency }}</td>
+      <td>
+        <button nz-button nzType="link" (click)="openEditModal(rentalDetail)">Sửa</button>
+        <button nz-button nzType="text" nzDanger (click)="deleteRentalDetail(rentalDetail.RentalDetailID)">Xóa</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+<button nz-button nzType="primary" (click)="openAddModal()">Thêm chi tiết đơn thuê</button>
+
+<nz-modal [(nzVisible)]="isModalVisible" nzTitle="Thông tin chi tiết đơn thuê" (nzOnCancel)="closeModal()" (nzOnOk)="saveRentalDetail()">
+  <form nz-form>
+    <nz-form-item>
+      <nz-form-label nzFor="rental" [nzRequired]="true">Đơn thuê</nz-form-label>
+      <nz-form-control>
+        <nz-select id="rental" [(ngModel)]="selectedRentalDetail.RentalID" name="rental" required>
+          <nz-option *ngFor="let rental of rentals" [nzValue]="rental.RentalID" [nzLabel]="rental.Customer.FullName"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzFor="comicBook" [nzRequired]="true">Sách truyện</nz-form-label>
+      <nz-form-control>
+        <nz-select id="comicBook" [(ngModel)]="selectedRentalDetail.ComicBookID" name="comicBook" required>
+          <nz-option *ngFor="let comicBook of comicBooks" [nzValue]="comicBook.ComicBookID" [nzLabel]="comicBook.Title"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzFor="quantity" [nzRequired]="true">Số lượng</nz-form-label>
+      <nz-form-control>
+        <input nz-input type="number" id="quantity" [(ngModel)]="selectedRentalDetail.Quantity" name="quantity" required />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzFor="pricePerDay" [nzRequired]="true">Giá thuê mỗi ngày</nz-form-label>
+      <nz-form-control>
+        <input nz-input type="number" id="pricePerDay" [(ngModel)]="selectedRentalDetail.PricePerDay" name="pricePerDay" required />
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-modal>

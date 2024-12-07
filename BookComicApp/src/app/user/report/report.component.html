@@ -1,1 +1,57 @@
-<p>report works!</p>
+<form nz-form (ngSubmit)="filterRentals()">
+  <nz-form-item>
+    <nz-form-label nzFor="startDate" [nzRequired]="true"
+      >Ngày bắt đầu</nz-form-label
+    >
+    <nz-form-control>
+      <nz-date-picker
+        [(ngModel)]="startDate"
+        name="startDate"
+        required
+      ></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="endDate" [nzRequired]="true"
+      >Ngày kết thúc</nz-form-label
+    >
+    <nz-form-control>
+      <nz-date-picker
+        [(ngModel)]="endDate"
+        name="endDate"
+        required
+      ></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
+  <button nz-button nzType="primary" type="submit">Lọc báo cáo</button>
+</form>
+
+<nz-table
+  #basicTable
+  [nzData]="rentalDetails"
+  [nzBordered]="true"
+  [nzSize]="'middle'"
+  [nzShowPagination]="true"
+>
+  <thead>
+    <tr>
+      <th nzWidth="20%">Tên sách truyện</th>
+      <th nzWidth="20%">Ngày thuê</th>
+      <th nzWidth="20%">Ngày trả</th>
+      [_{{{CITATION{{{_1{](https://github.com/yagmuraaltug/CarRentalSystem-FrontEnd/tree/be42743937cae45a58f4101232d3af152ad5619d/src%2Fapp%2Fcomponents%2Frental%2Frental.component.ts)[_{{{CITATION{{{_2{](https://github.com/CerenSusuz/recap-frontend/tree/bf96d111402017abfe54936d3e30acae5ab93637/src%2Fapp%2Fcomponents%2Frental%2Frental.component.ts)
+    </tr>
+  </thead></nz-table
+>
+</tr>
+</thead>
+<tbody>
+  <tr *ngFor="let detail of rentalDetails">
+    <td>{{ detail.ComicBook?.Title }}</td>
+    <td>{{ detail.Rental?.RentalDate | date: 'dd/MM/yyyy' }}</td>
+    <td>{{ detail.Rental?.ReturnDate | date: 'dd/MM/yyyy' }}</td>
+    <td>{{ detail.Rental?.Customer?.FullName }}</td>
+    <td>{{ detail.Quantity }}</td>
+  </tr>
+</tbody>
+</nz-table>
+

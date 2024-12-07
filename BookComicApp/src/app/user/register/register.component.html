@@ -1,1 +1,16 @@
-<p>register works!</p>
+
+<form nz-form (ngSubmit)="registerCustomer()">
+  <nz-form-item>
+    <nz-form-label nzFor="fullname" [nzRequired]="true">Tên đầy đủ</nz-form-label>
+    <nz-form-control>
+      <input nz-input id="fullname" [(ngModel)]="newCustomer.FullName" name="fullname" required />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="phone" [nzRequired]="true">Số điện thoại</nz-form-label>
+    <nz-form-control>
+      <input nz-input id="phone" [(ngModel)]="newCustomer.PhoneNumber" name="phone" required />
+    </nz-form-control>
+  </nz-form-item>
+  <button nz-button nzType="primary" type="submit">Đăng ký</button>
+</form>
