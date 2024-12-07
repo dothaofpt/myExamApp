@@ -1,32 +1,40 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ComicBookListComponent } from './components/comic-book-list/comic-book-list.component';
-import { ComicBookCreateComponent } from './components/comic-book-create/comic-book-create.component';
-import { CustomerRegisterComponent } from './customer-register/customer-register.component';
-import { RentalCreateComponent } from './rental-create/rental-create.component';
-import { RentalReportComponent } from './rental-report/rental-report.component';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ComicBookListComponent,
-    ComicBookCreateComponent,
-    CustomerRegisterComponent,
-    RentalCreateComponent,
-    RentalReportComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    NzTableModule,
+    NzFormModule,
+    NzInputModule,
+    NzDatePickerModule,
+    NzButtonModule,
+    NzModalModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: NZ_I18N, useValue: en_US }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

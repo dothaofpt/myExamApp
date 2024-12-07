@@ -1,0 +1,47 @@
+
+<nz-table #basicTable [nzData]="customers" [nzBordered]="true" [nzSize]="'middle'" [nzShowPagination]="true">
+  <thead>
+    <tr>
+      <th nzWidth="25%">Tên đầy đủ</th>
+      <th nzWidth="25%">Số điện thoại</th>
+      <th nzWidth="25%">Ngày đăng ký</th>
+      <th nzWidth="25%">Thao tác</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.FullName }}</td>
+      <td>{{ customer.PhoneNumber }}</td>
+      <td>{{ customer.Registration | date: 'dd/MM/yyyy' }}</td>
+      <td>
+        <button nz-button nzType="link" (click)="openEditModal(customer)">Sửa</button>
+        <button nz-button nzType="text" nzDanger (click)="deleteCustomer(customer.CustomerID)">Xóa</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+<button nz-button nzType="primary" (click)="openAddModal()">Thêm khách hàng</button>
+
+<nz-modal [(nzVisible)]="isModalVisible" nzTitle="Thông tin khách hàng" (nzOnCancel)="closeModal()" (nzOnOk)="saveCustomer()">
+  <form nz-form>
+    <nz-form-item>
+      <nz-form-label nzFor="fullname" [nzRequired]="true">Tên đầy đủ</nz-form-label>
+      <nz-form-control>
+        <input nz-input id="fullname" [(ngModel)]="selectedCustomer.FullName" name="fullname" required />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzFor="phone" [nzRequired]="true">Số điện thoại</nz-form-label>
+      <nz-form-control>
+        <input nz-input id="phone" [(ngModel)]="selectedCustomer.PhoneNumber" name="phone" required />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzFor="registration">Ngày đăng ký</nz-form-label>
+      <nz-form-control>
+        <nz-date-picker [(ngModel)]="selectedCustomer.Registration" name="registration"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-modal>
